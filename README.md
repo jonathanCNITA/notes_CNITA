@@ -1,2 +1,6 @@
 # notes_CNITA
 my notes @ CNITA
+
+* HTML / CSS / BOOTSTRAP
+* JAVASCRIPT / JQUERY
+* GIT
