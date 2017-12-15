@@ -43,6 +43,12 @@ Display your .md as html page with sublime:
 </html>
 ```
 
+### Comments
+```html
+<p>this is a text</p>
+<!-- this a html comment -->
+<p>this is an other text</p>
+```
 
 
 ## CSS
