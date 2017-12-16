@@ -1,7 +1,7 @@
 # LEARN PHP
 
 
-## Search  MySQL definition
+## Search MySQL definition
 MySQL
 MySQL (prononcer [maj.ɛs.ky.ɛl]) est un système de gestion de bases de données relationnelles (SGBDR - Système de Gestion de Bases de Données Relationnelles)
 
@@ -113,7 +113,7 @@ Simple condition example:
 
 ## Switch statement
 Basic switch case
-```
+```php
 <?php
     $i = 2;
     
@@ -136,7 +136,7 @@ Basic switch case
 
 
 The same with syntaxique sugar:
-```
+```php
 <?php
     $i = 2;
     
@@ -158,7 +158,7 @@ The same with syntaxique sugar:
 ```
 
 switch tricks:
-```
+```php
 <?php
     $i = 5;
     
@@ -180,21 +180,21 @@ switch tricks:
         default:
             echo "Je ne connais pas la valeur de \$i.";
     }
-    ?>
+?>
 ```
 
 
 ## Arrays
 
 Array in PHP:
-```
+```php
 <?php
 	$myArray = array("Oeuf", "Tomate", "Haricot", "Chips", "Saucisse");
 ?>
 ```
 
 Access to a value:
-```
+```php
 <?php
 	$myArray = array("Javascript", "PHP", "Python", "Go");
 	echo $myArray[2];
@@ -204,7 +204,7 @@ Access to a value:
 ```
 
 Delete a specific value with `unset`:
-```
+```php
 <?php 
    $tableau = array("rouge", "bleu", "vert"); 
    unset($tableau[2]); 
@@ -212,25 +212,27 @@ Delete a specific value with `unset`:
 ```
 
 Delete an array:
-```
-unset($tableau); 
+```php
+<?php
+	unset($tableau);
+?> 
 ```
 
 Loop over an array:
-```
+```php
 <?php
-        $langages = array("HTML/CSS", "JavaScript", "PHP", "Python", "Ruby");
-        supprimer Python du tableau !
-        unset($langages[3]);
-        
-        foreach($langages as $lang) {
-          print "<p>$lang</p>";
-        }
-      ?>
+    $langages = array("HTML/CSS", "JavaScript", "PHP", "Python", "Ruby");
+    // supprimer Python du tableau !
+    unset($langages[3]);
+    
+    foreach($langages as $lang) {
+      print "<p>$lang</p>";
+    }
+?>
 ```
 
 Push element in an array with `array_push($arrayName, "valueToPush"` :
-```
+```php
 <?php
 	$myArray = array ();
 	array_push($myArray, "red");
@@ -240,7 +242,7 @@ Push element in an array with `array_push($arrayName, "valueToPush"` :
 ```
 
 Get the array size with `count($array)` :
-```
+```php
 <php
 	$myArray = array("elem0", "elem1", "elem2");
 	print count($myArray);
@@ -252,7 +254,7 @@ Get the array size with `count($array)` :
 ### for foreach
 
 The for loop:
-```
+```php
 <?php
     // Print the 5 even numbers
     for  ($i = 2; $i < 11; $i = $i + 2) {
@@ -262,7 +264,7 @@ The for loop:
 ```
 
 The `foreach`
-```
+```php
 <?php
 	$langs = array("JavaScript", "HTML/CSS", "PHP", "Python", "Ruby");
 	foreach ($langs as $lang) {
@@ -274,7 +276,7 @@ The `foreach`
 ### while
 
 Classic version:
-```
+```php
 <?php
 	$conditionBoucle = true;
 
@@ -287,7 +289,7 @@ Classic version:
 ```
 
 Version with the syntaxique sugar:
-```
+```php
 <?php
 	$conditionBoucle = true;
 
@@ -301,7 +303,7 @@ Version with the syntaxique sugar:
 
 ### The do while:
 
-```
+```php
 <?php
 	$i = 0;
 	do {
@@ -318,16 +320,16 @@ Version with the syntaxique sugar:
 #### strings functions
 
 Get the length of a string with `strlen("word")` :
-```
+```php
 <?php
 	$lengthWord = strlen("John Doe");
-	echo $lengthWord
+	echo $lengthWord;
 ?>
 ```
 
 
-splice a string with `substr("word word2")` :
-```
+Splice a string with `substr("word word2")` :
+```php
 <?php
 	$phrase = "this is a phrase";
 	$verb = substr($phrase, 5, 7);
@@ -336,7 +338,7 @@ splice a string with `substr("word word2")` :
 ```
 
 Set uppercase `strtoupper()` / lowercase `strtolower()` :
-```
+```php
 <?php
 	$name = "john";
 	$name = strtoupper($name);
@@ -348,19 +350,19 @@ Set uppercase `strtoupper()` / lowercase `strtolower()` :
 ```
 
 Find the first match case with `strpos("word", "or")` :
-```
+```php
 <?php
-	$pos=strpos("emily", "e"); // $pos vaut 0 
-	$pos=strpos("emily", "i"); // $pos vaut 2 
-	$pos=strpos("emily", "ily"); // $pos vaut 2 
-	$pos=strpos("emily" "zxc"); // $Pos vaut false 
+	$pos=strpos("emily", "e"); // $pos -> 0 
+	$pos=strpos("emily", "i"); // $pos -> 2 
+	$pos=strpos("emily", "ily"); // $pos -> 2 
+	$pos=strpos("emily" "zxc"); // $Pos -> false 
 ?>
 ```
 
 #### mathematical functions
 
 The round():
-```
+```php
 <?php
 	// round PI number
 	$result = round(M_PI); 
@@ -373,20 +375,20 @@ The round():
 ```
 
 The random number with `rand()` :
-```
+```php
 <?php
-//without limits yana
-print rand (); 
+	//without limits yana
+	print rand (); 
 
-// between 1 & 10 
-print rand (1,10); 
+	// between 1 & 10 
+	print rand (1,10); 
 ?>
 ```
 
 #### Array functions
 
 Push element in an array with `array_push($arrayName, "valueToPush"` :
-```
+```php
 <?php
 	$myArray = array ();
 	array_push($myArray, "red");
@@ -396,7 +398,7 @@ Push element in an array with `array_push($arrayName, "valueToPush"` :
 ```
 
 Get the array size with `count($array)` :
-```
+```php
 <php
 	$myArray = array("elem0", "elem1", "elem2");
 	print count($myArray);
@@ -404,7 +406,7 @@ Get the array size with `count($array)` :
 ```
 
 Sort an array with `sort(array)`(return true if OK else ..... false):
-```
+```php
 <?php
 	$myNums = array(23, 7,18,17);
     sort($myNums);
@@ -416,7 +418,7 @@ Sort an array with `sort(array)`(return true if OK else ..... false):
 
 
 Sort an reversed array with `rsort($array)` (return true if OK else ..... false):
-```
+```php
 <?php
 	$myNums = array(23, 7,18,17);
     rsort($myNums);
@@ -427,10 +429,10 @@ Sort an reversed array with `rsort($array)` (return true if OK else ..... false)
 ```
 
 Join the elements of an array () with `join($mArray)` :
-```
+```php
 <?php
 	$myNums = array("my", "name","is","John");
-	print
+	print join($myNums);
 
 ?>
 ```
