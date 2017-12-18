@@ -15,6 +15,13 @@ PostgreSQL
 Ingres Database
 SQLite
 
+## WAMP definition:
+Windows Apache MySQL PHP    
+
+**Windows** assure l'attribution des ressources à ces trois composants;
+**Apache** est le serveur web « frontal » : il est « devant » tous les autres et répond directement aux requêtes du client web (navigateur);
+**MySQL** stocke toutes les données de l'application - c'est le système de gestion de bases de données relationnelles;
+**PHP** Le langage de script qui sert la logique.
 
 ## PHP base
 
@@ -419,18 +426,32 @@ Sort an reversed array with `rsort($array)` (return true if OK else ..... false)
 ```
 <?php
 	$myNums = array(23, 7,18,17);
-    rsort($myNums);
-    foreach($myNums as $num) {
-        print "<p>$num</p>";   
-    }	
+  rsort($myNums);
+  foreach($myNums as $num) {
+    print "<p>$num</p>";   
+  }	
 ?>
 ```
 
 Join the elements of an array () with `join($mArray)` :
 ```
 <?php
-	$myNums = array("my", "name","is","John");
-	print
-
+	$myNums = array("my", "name", "is", "John");
+	print join(", ", $myNums);
 ?>
+```
+
+### Write your own functions
+
+It work like other functions:
+```
+<?php
+  function addTen( $num ) {
+    return $num + 10;
+  }
+
+  addTen(8);
+  // -> 18
+?>
+
 ```
