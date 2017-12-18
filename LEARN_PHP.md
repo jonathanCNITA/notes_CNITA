@@ -1,6 +1,9 @@
 # LEARN PHP
 
 
+## links
+[A php sandbox](http://sandbox.onlinephpfunctions.com/)
+
 ## Search MySQL definition
 MySQL
 MySQL (prononcer [maj.ɛs.ky.ɛl]) est un système de gestion de bases de données relationnelles (SGBDR - Système de Gestion de Bases de Données Relationnelles)
@@ -42,6 +45,12 @@ OR use `print`
 <?php 
 	print "Ceci est du texte"; 
 ?>
+```
+
+OR shorter in your HTML:
+```
+<h2>title</h2>
+<p>Salut <?= $maVariable ?></p>
 ```
 
 ### Concatenation strings
@@ -456,5 +465,30 @@ It work like other functions:
   addTen(8);
   // -> 18
 ?>
-
 ```
+
+
+## Date and Time
+
+| PHP functions   |    Role                                                                                                                                       |  
+|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| date()          | `echo date("d/m/y");` return a string with d as day, m as month y as year. [date doc](http://php.net/manual/fr/function.date.php)             |
+| getDate()       | getDate() return an associatif array, access to day d : `echo getDate()['mday'];` [getDate doc](http://php.net/manual/fr/function.getdate.php)|
+| time()          | return the actual time in second since the 01/01/1970 00:00:00 GMT [time doc](http://php.net/manual/fr/function.time.php)                     |
+
+
+## CLI with PHP (Command Line Interface)
+
+[OpenClassroom tut](https://openclassrooms.com/courses/executer-php-en-cli-console)
+
+You Can run Php script in the console.
+If **WAMP** is installed:
+```
+cd C:\wamp64\bin\php\php7.1.9>
+>php cd/path/to/the/file/myScript.php
+```
+
+
+**WARNING** if your script is in an infinite loop quit with: <kbd>CTRL</kbd>+<kbd>C</kbd>
+
+
