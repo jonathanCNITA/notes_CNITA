@@ -491,4 +491,24 @@ cd C:\wamp64\bin\php\php7.1.9>
 
 **WARNING** if your script is in an infinite loop quit with: <kbd>CTRL</kbd>+<kbd>C</kbd>
 
+## Include / Require Fichier PHP
 
+For segment his PHP files we can use Include or require:
+
+```php
+vars.php
+<?php
+  $couleur = 'verte';
+  $fruit = 'pomme';
+?>
+
+test.php
+<?php
+echo "Une $fruit $couleur"; // Une
+  include 'vars.php';
+  echo "Une $fruit $couleur"; // Une pomme verte
+?>
+```
+
+
+**Be prudent with the "portée des variable" when you include in your file like if you include it in a function**
