@@ -493,7 +493,7 @@ cd C:\wamp64\bin\php\php7.1.9>
 
 ## Include / Require Fichier PHP
 
-For segment his PHP files we can use Include or require:
+For segment PHP files we can use Include or require:
 
 ```php
 vars.php
@@ -511,4 +511,18 @@ echo "Une $fruit $couleur"; // Une
 ```
 
 
-**Be prudent with the "portée des variable" when you include in your file like if you include it in a function**
+**Be prudent with the "portée des variables" when you include in your file like if you include it in a function**
+
+
+## Global variables:
+
+### $_SESSION["variableName"] = 3;
+
+
+```php
+<?php
+  function echoGlobal() {
+    echo $_SESSION["variableName"];
+  }
+?>
+```
