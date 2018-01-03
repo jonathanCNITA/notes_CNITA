@@ -20,6 +20,7 @@ Entité de la Table: Nom de la table ????
 
 ### Attributs:
 Un attribut est une caractéristique d'une entité susceptible d'être enregistrée dans la base de données. Par exemple, une personne (entité), son nom et son adresse (des attributs). Les attributs sont également appelés des champs ou des colonnes4. Dans le schéma les entités sont décrites comme un lot d'attributs en rapport avec un sujet
+
 ### Clé Primaire (Primary key):
 Dans les modèles de données relationnels, la clé primaire est un attribut dont le contenu est différent pour chaque enregistrement de la table, ce qui permet de retrouver un et un seul enregistrement
 
@@ -31,17 +32,27 @@ SQL (sigle de Structured Query Language, en français langage de requête struct
 
 ### Cardinalité:
 La cardinalité d'une association - d'un lien entre deux entités A et B - est le nombre de A pour lesquelles il existe un B et inversement. Celle-ci peut être un-a-un, un-a-plusieurs ou plusieurs-à-plusieurs. Par exemple, un compte bancaire appartient à un seul client, et un client peut avoir plusieurs comptes bancaires (cardinalité un-a-plusieurs)
+
 ### CRUD:
 L'acronyme informatique anglais CRUD (pour create, read, update, delete) (parfois appelé SCRUD avec un "S" pour search) désigne les quatre opérations de base pour la persistance des données, en particulier le stockage d'informations en base de données.
 
+
+### Relation:
+Une relation est un lien entre deux tables, associant des données de la première avec celles de la deuxième.    
+Trois situations sont possibles :     
++ les relations peuvent s'établir d'un enregistrement à un seul autre (1 à 1);
++ d'un enregistrement à plusieurs autres (1 à wpe8.gif (866 octets) );
++ de plusieurs enregistrements à plusieurs autres (de wpe9.gif (866 octets) à  wpeA.gif (866 octets) ). 
 
 ## C'est quoi:
 Une base de donnée contient X tables     
 Chaque table à un nom unique elle contienne les datas.     
 Une Table est constitué de colones (attribut : nom de la colone) qui est typé INT, VARCHAR, BOOL, DATE...      
 Une Table peut contenir une **PRIMARY KEY** mais plusieurs **FOREIGN KEY**
-example:    
-
+example:
+********************* 
+**TableName :** info
+*********************
 id|Nom |age|mail
 --|----|---|----
 1 |jojo|36|jojo@mail.com
@@ -51,3 +62,26 @@ id|Nom |age|mail
 ## Schema 
 
 ![schema BDD](https://sgbd.developpez.com/tutoriels/cours-complet-bdd-sql/images/image-3.png "schema BDD")
+![schema table](https://cacoo.com/assets/site/img/templates/inner/img_database3.png )
+
+
+USER -> SERVEUR -> php -> requete SQL -> SGBD -> DATABASE -> TABLE
+
+-> PHP -> HTML-> USER
+
+
+## Example SQL:
+
+
+```
+SELECT Nom From info;
+WHERE Nom LIKE ('jo%');
+```
+
+SELECT
+SELECT DISTINCT
+WHERE
+AND OR NOT
+ORDER BY
+INSERT INTO
+NULL VALUE
