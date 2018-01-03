@@ -3,7 +3,7 @@
 
 ## Glossaire
 
-### Base De Donnée: 
+### Base De Données: 
 Une base de données est un « conteneur » stockant des données2 telles que des chiffres, des dates ou des mots, pouvant être retraités par des moyens informatiques pour produire une information ; par exemple, des chiffres et des noms assemblés et triés pour former un annuaire.
 
 ### SGBD:
@@ -40,9 +40,9 @@ L'acronyme informatique anglais CRUD (pour create, read, update, delete) (parfoi
 ### Relation:
 Une relation est un lien entre deux tables, associant des données de la première avec celles de la deuxième.    
 Trois situations sont possibles :     
-+ les relations peuvent s'établir d'un enregistrement à un seul autre (1 à 1);
-+ d'un enregistrement à plusieurs autres (1 à wpe8.gif (866 octets) );
-+ de plusieurs enregistrements à plusieurs autres (de wpe9.gif (866 octets) à  wpeA.gif (866 octets) ). 
++ les relations peuvent s'établir d'un enregistrement à un seul autre ( 1 à 1 );
++ d'un enregistrement à plusieurs autres ( 1 à n );
++ de plusieurs enregistrements à plusieurs autres ( n à n ). 
 
 ## C'est quoi:
 Une base de donnée contient X tables     
@@ -61,7 +61,6 @@ id|Nom |age|mail
 
 ## Schema 
 
-![schema BDD](https://sgbd.developpez.com/tutoriels/cours-complet-bdd-sql/images/image-3.png "schema BDD")
 ![schema table](https://cacoo.com/assets/site/img/templates/inner/img_database3.png )
 
 
