@@ -178,42 +178,42 @@ Test apach done
 Open your web browser and navigate to http://localhost/ or http://server-ip-address/.
 
 **Install MySQL**
-```
-apt-get install mysql-server mysql-client
+```bash
+apt-get install mysql-server
 ```
 
 test MySQL installation
-```
+```bash
 systemctl status mysql
 ```
 
 **Install PHP**
-```
-apt-get install php5 php5-mysql libapache2-mod-php5
+```bash
+apt-get install php7.0
 ```
 
 To test PHP, create a sample “testphp.php” file in Apache document root folder.
 
-```
+```bash
 nano /var/www/html/testphp.php
 ```
 
 Add the following lines.
-```
+```bash
 <?php
 phpinfo();
 ?>
 ```
 
 Restart apache2 service with:
-```
+```bash
 systemctl restart apache2
 ```
 
 ### After LAMP
 
 1. make an update / upgrade `apt-get update` then `apt-get upgrade`
-2. add your DB with phpMyAdmin
+2. add your DB with phpMyAdmin : create database / import your DB 
 3. add your files with winscp / filezilla / git in `var/www/html`
 	1. git init
 	2. git remote
@@ -223,21 +223,64 @@ systemctl restart apache2
 ### The logs files
 In the log file you can see everything (BB is watching you).  
 
-```
+```bash
 cd var/log/appache2/
 cat error.log
 
 # print the last 10
-cat tail error.log
+tail error.log
 
 # print the last 6
-cat tail -n 6 error.log
+tail -n 6 error.log
 
 # print realtime
-cat tail -f error.log
+tail -f error.log
 ```
 
 **TIPS! : click 3 times to select a line**
+
+
+### CLE SSH
+[Tutorial](https://delicious-insights.com/fr/articles/comprendre-et-maitriser-les-cles-ssh/)
+
+Check if you have a SHH KEY (DSA / RSA):
+```bash
+ls -lAF ~/.ssh
+```
+
+
+If Not, generate a new one
+```bash
+ssh-keygen
+```
+
+The path to the keys on your local machine:
+```
+(/p//.ssh/id_rsa)
+```
+
+```bash
+ssh-copy-id root@xxx.xx.xxx.xxx
+```
+
+
+------------------------------------------------------------------------------------------
+###DEFFINITION
+
+#### Package / paquet linux : 
+En informatique, et en particulier dans le contexte des systèmes UNIX, on appelle paquet (ou parfois paquetage, en anglais package) 
+une archive (fichier compressé) comprenant les fichiers informatiques, 
+les informations et procédures nécessaires à l'installation d'un logiciel sur un système d'exploitation
+
+
+
+## Mettre son projet via git
+
+Le principe:  
+1. On devellope en locale 
+2. On push sur le repository distant (github par example)
+3. depuis le serveur en ssh on clone le repository pour la première fois
+
 
 _________________________________________________________________________
 
