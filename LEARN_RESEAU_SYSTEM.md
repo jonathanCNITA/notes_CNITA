@@ -34,7 +34,7 @@ cd /home/documents/music
 ``` 
 To go back use `../`
 
-**ls**
+**ls**    
 `ls` mean 'list segments' you can see/list all files and folders in the current directory.
 ```bash
 # classic list
@@ -43,7 +43,7 @@ ls
 ls -a
 ```
 
-**cat**
+**cat**  
 `cat` mean 'catenate' you can show the content of a file with this command    
 ```bash
 cat recipe.txt
@@ -51,7 +51,7 @@ cat index.html
 cat README.md
 ``` 
 
-**grep**
+**grep**   
 `grep` mean 'General Regular Expression Processor' it search a mactching expression. 
 It often use with a find or cat. use it has a filter.
 ```bash
@@ -77,20 +77,20 @@ mv -r atWork/project finished/
 mv hekko.txt hello.txt
 ```
 
-**cp**
-`cp` mean copy, so it copy the file or folder and paste     
+**cp**      
+`cp` mean copy, so it copys the file or folder and paste     
 ```bash
 cp document/myFilm.aep document/filmInProduction/
 ```
 
-**pwd**
+**pwd**    
 `pwd` mean 'print working directory' so it print where you are.      
 ```bash
 pwd
 # will print $home/myname/DOCUMENT/mywebsite/css
 ```
 
-**touch**
+**touch**     
 `touch` mean ???, it's used for create file.    
 But it's general purpose is Update the access and modification times of each FILE to the current time.
 ```bash
@@ -169,7 +169,7 @@ You have to install it by hands but it's very fast
 4. Install PHPmyAdmin (! NOT IN PRODUCTION !)
 
 
-** Install APACHE2 **
+**Install APACHE2**
 ```bash
 apt-get install apache2
 ```
@@ -177,7 +177,7 @@ apt-get install apache2
 Test apach done
 Open your web browser and navigate to http://localhost/ or http://server-ip-address/.
 
-** Install MySQL **
+**Install MySQL**
 ```
 apt-get install mysql-server mysql-client
 ```
@@ -187,7 +187,7 @@ test MySQL installation
 systemctl status mysql
 ```
 
-** Install PHP **
+**Install PHP**
 ```
 apt-get install php5 php5-mysql libapache2-mod-php5
 ```
