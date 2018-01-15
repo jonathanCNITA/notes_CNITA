@@ -249,7 +249,7 @@ ls -lAF ~/.ssh
 ```
 
 
-If Not, generate a new one
+If No, generate a new one
 ```bash
 ssh-keygen
 ```
@@ -259,6 +259,7 @@ The path to the keys on your local machine:
 (/p//.ssh/id_rsa)
 ```
 
+copy your ssh key to your server:
 ```bash
 ssh-copy-id root@xxx.xx.xxx.xxx
 ```
