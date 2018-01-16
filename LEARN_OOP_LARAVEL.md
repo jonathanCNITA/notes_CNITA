@@ -14,11 +14,26 @@
 
 Change the first default page : coffee_machine > ressources > views > welcome.blade.php
 
+## Create a new projet (laravel and composer works fine)
+1. `laravel new project2`
+2. `cd /c/wamp64/www/project2`
+3. `php artisan serve`
+
+## Clonned project
+1. `composer install`
+2. duplicate .env.example and rename -> .env
+3. php artisan key:generate
+
 ## Install Debug_bar / composer
 
 [laravel-debugbar](https://github.com/barryvdh/laravel-debugbar)     
 ```
-composer require barryvdh/laravel-debugbar --dev
+composer require barryvdh/laravel-debugbar
 ```
 
-## Next
+## Install laravel plugins
+
+On sublime text :
+<kbd>ctrl</kbd><kbd>shift</kbd><kbd>p</kbd>      
+type : `Package control: install Package`     
+search packages `blade highliter`     
