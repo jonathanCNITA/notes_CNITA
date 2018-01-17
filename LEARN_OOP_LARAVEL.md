@@ -36,4 +36,44 @@ composer require barryvdh/laravel-debugbar
 On sublime text :
 <kbd>ctrl</kbd><kbd>shift</kbd><kbd>p</kbd>      
 type : `Package control: install Package`     
-search packages `blade highliter`     
+search packages `blade highliter`  
+
+
+## Controller
+
+**Route function view** 3 is the magic number
+
+### 1- Change route wep.php
+Routes -> web.php
+
+Controller version
+```php
+Route::get('ventes', 'OrderController@liste');
+```
+
+Original version 
+```php
+Route::get('ventes', function () {
+    return view('pages/ventes');
+});
+```
+
+### 2- Create the class
+
+App -> Http -> Controller
+Create a file with the name of your class and your function for the view.     
+```php
+<?php
+
+namespace App\Http\Controllers;
+
+class OrderController extends Controller {
+	function liste() {
+		return view('pages/ventes');
+	}
+}
+```
+
+
+
+
