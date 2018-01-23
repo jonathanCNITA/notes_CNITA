@@ -1,34 +1,37 @@
 # PROGRAMMATION OBJET EN PHP
 
-
+[PHP Object Oriented programming cheat sheet](http://www.logicbig.com/tutorials/misc/php/php-oop-cheat-sheet/)
+[the PHP sand box](http://sandbox.onlinephpfunctions.com/)
+[Un lien interréssant](http://www.pierre-giraud.com/php-mysql/cours-complet/php-poo-chainage-methodes.php)
 ## Glossaire
 
-Class : la class et une sorte de plan avec des attributs et des methodes qui une fois instancier crée
+**Class**
+ : la class et une sorte de plan avec des attributs et des methodes qui une fois instancier crée
 
 > Une classe peut contenir ses propres constantes, variables (appelées "propriétés" ou "attributs"), et fonctions (appelées "méthodes"). 
 
-Method : Les methodes sont les fonctions d'une class.
+**Method** : Les methodes sont les fonctions d'une class.
 
-Attribut : Les attributs sont les variables d'une class.
+**Attribut** : Les attributs sont les variables d'une class.
 
-Héritage:  on parle d'héritage lorqu'une classe dépend d'une classe mère, elle "hérite" des attributs et méthode de la classe mère.
+**Héritage**:  on parle d'héritage lorqu'une classe dépend d'une classe mère, elle "hérite" des attributs et méthode de la classe mère.
 
-Chaînage (classe liées)
+**Chaînage**
 
-Collection d’objets
+**Collection d’objets**
 
-Paradigme
+**Paradigme**
 
-Instance de classe: Un objet est une instance d'une class
+**Instance de classe**: Un objet est une instance d'une class
 
-public / private / protected Sont des mots clé qui définnissent dans quel espaces ils sont accessible et ou modifiable.
+**public / private / protected** Sont des mots clé qui définnissent dans quel espaces ils sont accessible et ou modifiable.
 
 ***
 
 EXEMPLES :
 --------------------------
 
-**class**
+**class**: est une sorte de plan qui contient des attributs et des methodes. Elle sert de modele pour créer des objets.
 
 **Extends** : Mot clé pour faire d'une classe l'héritière d'une autre (notament ses fonctions et attributs)
 ```php
@@ -207,7 +210,7 @@ echo King::proclaim();
 
 **abstract**
 
-**static protected**
+**protected static**
 
 
-**self**
+**self** fait référence à self.
