@@ -84,6 +84,7 @@ class OrderController extends Controller {
 database > migration
 ```bash
 php artisan make:migration create_nom_fichier --create=nomdelatable
+php artisan make:model Boisson
 ```
 
 Add some data to the table
@@ -171,6 +172,7 @@ $post->toArray();
 
 Return all table
 ```php
+
 App\Post::all()->toArray();
 ```
 
