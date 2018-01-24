@@ -82,9 +82,14 @@ class OrderController extends Controller {
 [LARAVEL ELOQUENT](https://www.grafikart.fr/formations/laravel/eloquent)
 
 database > migration
+Better way (it )
+```bash
+php artisan make:model Boisson -m
+```
+
+
 ```bash
 php artisan make:migration create_nom_fichier --create=nomdelatable
-php artisan make:model Boisson
 ```
 
 Add some data to the table
@@ -162,7 +167,7 @@ php artisan tinker
 >>> $post = new App\Post::create(['title' => 'Post 2', 'slug' => 'post_2', 'content' => 'this is the content of post 2']);
 ```
 
-## 4- Queries ORM
+## 4- Queries ORM ELOQUENT
 
 Search id 2
 ```php
@@ -180,3 +185,16 @@ App\Post::all()->toArray();
 $post = App\Post::where('content', 'bla bla')->get();
 $post = App\Post::where('content', 'bla bla')->first();
 ```
+
+Get all order by
+```php
+$boissons = Boisson::orderBy('name')->get();
+// OR for descendant
+$boissons = Boisson::orderBy('nom', 'desc')->get();
+// OR
+$results = Project::all()->sortBy("name");
+// OR for descendant
+$results = Project::all()->sortByDesc("name");
+```
+
+[Available Methods](https://laravel.com/docs/5.1/collections)
