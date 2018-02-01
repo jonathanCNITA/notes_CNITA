@@ -42,14 +42,13 @@ search packages `blade highliter`
 ## Controller
 
 **Route function view** 3 is the magic number
+[Create a controller with artisan:](https://laravel.com/docs/5.5/controllers#resource-controllers)
+```bash
+php artisan make:controller nomController --resource
+```
 
 ### 1- Change route wep.php
 Routes -> web.php
-
-Controller version
-```php
-Route::get('ventes', 'OrderController@liste');
-```
 
 Original version 
 ```php
@@ -58,7 +57,33 @@ Route::get('ventes', function () {
 });
 ```
 
-### 2- Create the class
+Controller version (call the liste function of the Object OrderController)
+```php
+Route::get('ventes', 'OrderController@liste');
+```
+
+Controller with params
+```php
+Route::get('ventes/{yourParam}', 'OrderController@liste');
+```
+
+Call it in the view:
+```
+<a href="/adress/{{ $k->id}}">select</a>
+```
+
+**TIPS**
+You could also add a label to the Route:
+```php
+Route::get('ventes', 'OrderController@liste')->name('myOrders');
+```
+
+And call it in the view:
+```php
+<a href="{{route('boissonData', [$k->id])}}">select</a>
+```
+
+### 2- Create the class for Controller
 
 App -> Http -> Controller
 Create a file with the name of your class and your function for the view.     
@@ -74,22 +99,20 @@ class OrderController extends Controller {
 }
 ```
 
+OR use artisan : 
+```
+php artisan make:controller nameController --resource
+``` 
 
-
-## 3- Create Model with eloquent
+## 4- Create Model with eloquent
 
 
 [LARAVEL ELOQUENT](https://www.grafikart.fr/formations/laravel/eloquent)
 
 database > migration
-Better way (it )
+
 ```bash
 php artisan make:model Boisson -m
-```
-
-
-```bash
-php artisan make:migration create_nom_fichier --create=nomdelatable
 ```
 
 Add some data to the table
@@ -167,7 +190,7 @@ php artisan tinker
 >>> $post = new App\Post::create(['title' => 'Post 2', 'slug' => 'post_2', 'content' => 'this is the content of post 2']);
 ```
 
-## 4- Queries ORM ELOQUENT
+## 5- Queries ORM ELOQUENT
 
 Search id 2
 ```php
