@@ -221,3 +221,59 @@ $results = Project::all()->sortByDesc("name");
 ```
 
 [Available Methods](https://laravel.com/docs/5.1/collections)
+
+## Authentification in laravel
+
+[A good video](https://www.youtube.com/watch?v=P3g_zR0EkjQ)
+
+
+
+
+## Migrations files.
+
+```
+php artisan make:migration nom_genre_bien_commit
+```
+
+
+Open the file database/migration/2018_02_17_nom_genre_bien_commit
+```php
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class Test extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::table('users', function (Blueprint $table) {
+            $table->string("admin_auth")->default("user");
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn("admin_auth");
+        });
+    }
+    
+}
+```
+
+Then
+```
+php artisan migrate
+```
