@@ -277,3 +277,115 @@ Then
 ```
 php artisan migrate
 ```
+
+## Relation 
+
+### 1 Create model
+```
+php artisan make:model Order -m
+```
+
+### 2 Create controller
+```bash
+php artisan make:controller OrderController --resource
+```
+
+### 3 Make the realation in model :
+
+In the Drink Model
+```php
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Drink extends Model
+{
+    protected $fillable=[
+        "name",
+        "code",
+        "price"
+
+    ];
+
+
+    // relation hasmany
+    public function orders(){
+
+        return $this->hasMany("App\Order");
+
+    }
+}
+
+```
+
+
+In the Order Model
+```php
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Order extends Model
+{
+    // relation belongsTo
+    public  function  drinks() {
+
+        return $this->belongsTo("App\Drink");
+
+    }
+}
+
+```
+
+
+### 4 Update the migration file
+
+In database/migrations/2018_02_09_092254_create_orders_table.php
+```php
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateOrdersTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('orders', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('id_drink')->unsigned();
+            $table->string('code_drink');
+            $table->integer('sugar')->unsigned();
+            $table->integer('price')->unsigned();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('orders');
+    }
+}
+```
+
+### 5 Make Migrate
+
+```bash
+php artisan migrate
+```
+
