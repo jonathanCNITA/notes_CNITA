@@ -197,6 +197,9 @@ php artisan tinker
 >>> $post = new App\Post::create(['title' => 'Post 2', 'slug' => 'post_2', 'content' => 'this is the content of post 2']);
 ```
 
+[Resetting and Re-running All Migrations](http://laravel-recipes.com/recipes/68/resetting-and-re-running-all-migrations)
+
+
 ## 5- Queries ORM ELOQUENT
 
 
