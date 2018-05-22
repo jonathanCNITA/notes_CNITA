@@ -165,7 +165,7 @@ class DonationFeeTest extends TestCase
 
 ##LES TESTS FONCTIONNELS (Service tests)
 
-Les tests fonctionels regroupent des testq sur des fonctionalitées plus larges.
+Les tests fonctionels regroupent des tests sur des fonctionalitées plus larges.
 Les réponses des requêtes HTTP le contenu d'une page etc.
 
 Example:     
@@ -224,11 +224,89 @@ Dans la view projects.blade.php resource:views/projects.blade.php
 
 ```
 
+## Tests avec Faker et Factory
+
+Une factory est une forme d'instanciation, cela permet de créer à la volée une instance      
+avec des paramètres prédéfinits pour par example réaliser des tests.
+
+### Mise en place de la Factory ProjectFactory
+
+1. Creer une factory avec le model Project:
+```bash
+php artisan make:factory ProjectFactory --model=Project
+```
+On retrouve le fichier dans database/factories
+On utilise ici faker qui permet de rentrée des random data.
+
+2. Dans le fichier database/factories/ProjectFactory.php
+```php
+<?php
+
+use Faker\Generator as Faker;
+
+$factory->define(App\Project::class, function (Faker $faker) {
+    return [
+        'title' => $faker->sentence(),
+        'resume' => $faker->sentence(3),
+        'imageurl' => 'https://images.unsplash.com/photo-1519458246479',
+        'content' => implode($faker->paragraphs(5)),
+        'created_at' => \Carbon\Carbon::now(),
+        'updated_at' => \Carbon\Carbon::now()
+    ];
+});
+```
+
+### Utilisation de la factory dans un test in Memory
+
+```php
+<?php
+
+namespace Tests\Feature;
+
+use Tests\TestCase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+
+class ProjectTest extends TestCase
+{
+    // /!\ Ne pas oublier cette ligne /!\
+    use \Illuminate\Foundation\Testing\DatabaseMigrations;
+    /**
+     * A basic test example.
+     *
+     * @return void
+     */
+   
+    public function testPresenceOfH2InProjects()
+    {
+        // On crée 100 seule instance du model Project
+        // puis on en selectionne une seule
+        $project = factory(\App\Project::class, 100)->create()->random();
+        $response = $this->get('/projects');
+        $toSearch = '<h2>' . $project->title . '</h2>';
+        $response->assertSee($toSearch);
+    }
+
+
+    public function testPresenceOfH1InProjectFactory()
+    {
+        // On crée une seule instance du model Project
+        $project = factory(\App\Project::class)->create();
+        $response = $this->get('/project/show/'. $project->id);
+        $toSearch = '<h1>' . $project->title . '</h1>';
+        $response->assertSee($toSearch);
+    }
+
+}
+```
+
+
 ## Creer un model pour projet avec faker et seeder
+
 [How to use faker](https://www.youtube.com/watch?v=ZbGqDqiWYQ8)
 
 ### 1 - Generate a Model
 We need to generate a model for **project** (`-m` is for generate migration file)
+If it's not done before.
 ```bash
 php artisan make:model Project -m
 ```
@@ -273,7 +351,10 @@ class CreateProjectsTable extends Migration
 }
 
 ```
-
+Then Make the migration:
+```bash
+php artisan migrate
+```
 ### 3- Make a Seeder
 Make a seeder for your table:
 ```bash
@@ -317,4 +398,3 @@ class ProjectsTableSeeder extends Seeder
 ```bash
 php artisan db:seed --class=ProjectsTableSeeder
 ```
-
