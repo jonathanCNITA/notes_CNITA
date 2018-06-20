@@ -60,7 +60,8 @@ This systeme could take 3 params (1 at least : next):
 
 It Have always an Observable : the stream of data & an Observer who subscribe to the Observable.      
 
-### Basics
+---
+### BASICS
 Ex 1 -> 6 use basic Observable to test.     
 + create
 + fromEvent
@@ -75,9 +76,21 @@ const obsInterval = Rx.Observable.interval(1000);
 obsInterval.subscribe(check => print( new Date().getSeconds() ));
 ````
 
-## COLD vs HOT
+---
+### COLD vs HOT ( II )
 Ex 7 -> 9
 + cold method : 1 Observable 2 subscribers = 2 differents stream 
 + hot method_1 : 1 Observable 2 subscribers = 1 same stream
 + hot method_2 w/ publish & connect: 1 Observable 2 subscribers = 1 same stream
 
+---
+### COMPLETE / FINALY ( III )
+Ex 10 -> 11
++ finally
++ unsubscribe
+
+---
+### RxJS OPERATORS ( IV )
++ map
++ map : api call example
++ do : to do multiple things with the streamed data

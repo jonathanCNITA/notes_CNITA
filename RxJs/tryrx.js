@@ -1,5 +1,9 @@
 console.log('Getting started with RxJS!');
 
+
+
+//-- BASICS ( I )
+
 //-- [ Ex 1 ] ----------------------------------------------> CREATE
 /**
  * The easiest way to create an Observable.
@@ -45,15 +49,16 @@ console.log('Getting started with RxJS!');
 
 //-- [ Ex 3' ] ----------------------------------------------> FROM PROMISE REAL LIFE EXAMPLE
 //-- https://stackoverflow.com/questions/44877062/how-to-convert-a-fetch-api-response-to-rxjs-observable
-const promisePoke = new Promise((resolve, reject) => {
-    fetch('https://swapi.co/api/people/1/')
-    .then(data => data.json())
-    .then(dt => dt)
-    .catch(e => console.log(e));
-});
-const obsPoke = Rx.Observable.fromPromise(fetch('https://swapi.co/api/people/1/'));
-obsPoke.subscribe(result => result.json()
-                    .then(data => print(data.name)));
+
+// const promisePoke = new Promise((resolve, reject) => {
+//     fetch('https://swapi.co/api/people/1/')
+//     .then(data => data.json())
+//     .then(dt => dt)
+//     .catch(e => console.log(e));
+// });
+// const obsPoke = Rx.Observable.fromPromise(fetch('https://swapi.co/api/people/1/'));
+// obsPoke.subscribe(result => result.json()
+//                     .then(data => print(data.name)));
 
 //-- [ Ex 4 ] ----------------------------------------------> TIMER
 /**
@@ -85,7 +90,13 @@ obsPoke.subscribe(result => result.json()
 // obsOf.subscribe(stream => print(stream));
 
 
-//-- HOT AND COLD
+
+
+
+
+
+
+//-- HOT AND COLD ( II )
 
 //-- [ Ex 7 ] ----------------------------------------------> COLD
 /**
@@ -139,6 +150,84 @@ obsPoke.subscribe(result => result.json()
 // hot.connect();
 
 
+
+
+
+
+
+//-- COMPLETE / FINALY ( III )
+
+//-- [ Ex 10 ] ----------------------------------------------> FINALLY
+/**
+ * It just make something (print here) when the stream is done
+ */
+
+// const obsTimer = Rx.Observable.timer(1000);
+// obsTimer.finally(() => print('timer done after 1 sec')).subscribe();
+
+
+//-- [ Ex 11 ] ----------------------------------------------> UNSUBSCRIBE
+/**
+ * We use unsubscribe to force the end of a stream otherwise in some case 
+ * you will have memory leak /!\
+ */
+
+// const obsInterval = Rx.Observable.interval(500).finally(() => console.log('All done! stream was stop with unsubscribe'));
+// const sub = obsInterval.subscribe(x => print(x));
+
+// setTimeout((() => {
+//     sub.unsubscribe();
+// }), 3000);
+
+
+
+
+
+
+
+//-- RxJS OPERATORS ( IV )
+
+//-- [ Ex 12 ] ----------------------------------------------> MAP
+/**
+ * Map is used to map each value of a stream.
+ * It's done before the subscribe and allow you to change the data as 
+ * you like before work with them.
+ */
+
+// const obsForMap = Rx.Observable.of(9, 64, 100);
+// obsForMap
+//     .map(x => Math.sqrt(x))
+//     .subscribe(squared => print(squared));
+
+
+//-- [ Ex 12 ] ----------------------------------------------> MAP REAL LIFE EXAMPLE
+/**
+ * Here we simulate a Json file receved via an API
+ */
+
+// const jsonStr = '{"name": "jojo", "age": "124"}';
+// const apiCall = Rx.Observable.of(jsonStr);
+
+// apiCall
+//     .map( json => JSON.parse(json) )
+//     .subscribe(obj => {
+//         print(obj.name);
+//         print(obj.age);
+//     })
+
+
+//-- [ Ex 13 ] ----------------------------------------------> DO
+/**
+ * Do is used to make mutiple things with the data streamed.
+ */
+
+const obsNames = Rx.Observable.of('jojo', 'toto');
+
+obsNames
+    .do(name => print(name))
+    .map(name => name.toUpperCase())
+    .do(name => print(name))
+    .subscribe();
 
 //-- helper to print values
 function print(val) {
