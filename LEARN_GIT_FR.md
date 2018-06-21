@@ -118,7 +118,8 @@ Merge: Notre travail est placé sur la branche master (/!\ conflits /!\ )
 Rebase: on recupere la branche master et on mixe notre travail puis on peut faire un merge sur le master pour avoir un travail propre.
 `git rebase master`     
 `git checkout master`    
-`git merge dev`
+`git merge dev`    
+`git push`
 
 [citation de gitbook](https://git-scm.com/book/fr/v1/Les-branches-avec-Git-Rebaser)
 ````
