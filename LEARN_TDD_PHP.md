@@ -395,6 +395,13 @@ class ProjectsTableSeeder extends Seeder
 ```
 
 ### 5-Make migration 
+```bas
+hphp artisan db:seed --class=ProjectsTableSeeder
+```
+
+
+## Auth
+
 ```bash
-php artisan db:seed --class=ProjectsTableSeeder
+php artisan make:policy ProjectPolicy --model=Project
 ```
