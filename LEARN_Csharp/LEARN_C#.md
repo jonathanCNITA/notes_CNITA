@@ -124,6 +124,7 @@ foreach (KeyValuePair<string, List<string>> station in stationsDict)
 2. Selectionner Build sur le menu lateral
 3. cocher la case fichier de documentation XML
 4. faire la doc sous ce format.
+5. Simplement taper '///' pour affichet le format pour la documentation
 
 
 ````csharp
