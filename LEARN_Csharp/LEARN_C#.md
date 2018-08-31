@@ -69,6 +69,28 @@ using MetroApi;
 ## Un programme un peut plus complexe:
 Afficher le nom de l'utilisateur et une classe qui  retourne un message différent selon l'heure.
 
+## Creer une DLL (Dynamic Link Library)
+Définition  : Une Dynamic Link Library (en français, bibliothèque de liens dynamiques)1,2,3 est une bibliothèque logicielle dont les fonctions sont chargées en mémoire par un programme, au besoin, lors de son exécution, par opposition aux bibliothèques logicielles statiques ou partagées dont les fonctions sont chargées en mémoire avant le début de l'exécution du programme. ( [wikipedia](https://fr.wikipedia.org/wiki/Dynamic_Link_Library)
+
+---
+1. Ajouter un nouveau projet de type Bibliothèque de classe.         
+![new project](Capture_06.png)
+![Add methos & attribute to the class](Capture_07.png)
+2. Creer la librairie         
+![Add methos & attribute to the class](Capture_08.png)
+3. Une fois la classe ecrite il faut la générer       
+![Generate dll](Capture_10.png)
+4. On retrouvera le fichier DLL généré.     
+![Path to the dll file](Capture_11.png)
+5. Puis dans un programme creer une nouvelle instante de la classe (ou pas si il s'agit de méthode statique)     
+![Instance of the dll class](Capture_12.png)
+6. On remarque que le Dll n'est pas lié à notre projet, pour cela il faut mettre une référence à notre DLL.     
+![Add ref to the dll file](Capture_13.png)      
+![Add ref to the dll file](Capture_14.png)     
+![Add ref to the dll file](Capture_15.png)     
+7. Il faut enfin ajouter le namespace avec `using DllnameSpace`     
+![Add namespace](Capture_16.png)
+
 
 ## TIPS C#
 
