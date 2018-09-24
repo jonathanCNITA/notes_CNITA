@@ -52,7 +52,7 @@ La caisse s'exécute sur un PC. Une douchette permettra de lire les codes à bar
 
 ----
 
-##GRASP pattern : 
+## GRASP pattern : 
 Pour penser notre implémentation du diagramme de communication les GRASP pattern aux nombre de 9 nous permettent de repenser les liens entre les classes et l'architecture afin de rendre l'application plus robuste en laissant les classes le plus indépendantes possible.   
 
 **1- De couplage faible :**
