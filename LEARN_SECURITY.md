@@ -1,3 +1,6 @@
+# TEST FONNCTIONEL PUPETTEER
+ [Doc tools for puppetteer](https://developers.google.com/web/tools/)
+
 # Vulnerability testing Security scanner
 
 ## Links
@@ -19,6 +22,5 @@ Si WAMP est installé on le trouve dans le dossier : C:\wamp64\bin\apache\apache
 Cela fonctionne avec le `cmd` de windows pas avec git bash /!\
 ### Test 1 
 ````
-ab -n 100 -c 10 http://http://polr.campus-grenoble.fr/
+ab -n 100 -c 10 http://your.siteToTest.com/
 ````
-
