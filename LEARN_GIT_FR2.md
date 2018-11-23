@@ -87,6 +87,21 @@ Suite à cette étape les fichier son dans la stagging area.
 **revert d'un commit**
 `git checkout -- monfichier.txt`
 
+**Afficher les remotes**
+`git remote -v`
+```
+origin  https://github.com/jonathanCNITA/module-test-puppeteer.git (fetch)
+origin  https://github.com/jonathanCNITA/module-test-puppeteer.git (push)
+```
+**Supprimer le remote**
+`$ git remote rm origin`
+`$ git remote rm CustomName`
+
+**Ajouter un remote**
+`git remote add origin https://github.com/jonathanCNITA/polrFix.git`
+`git remote add CustomName https://github.com/jonathanCNITA/polrFix.git`
+`git push -u customName master`
+
 
 #### Branch
 Les branches sont un bon moyen d'organiser son travail et de laisser une branche master propre.    
